@@ -58,4 +58,11 @@ fn main() {
         println!("cargo:rustc-link-lib=dylib=stdc++");
         pkg_config::find_library("Qt5Core Qt5Gui Qt5Qml Qt5Quick").unwrap();
     }
+
+    if cfg!(target_os = "macos") {
+        println!("cargo:rustc-link-lib=framework=QtCore");
+        println!("cargo:rustc-link-lib=framework=QtGui");
+        println!("cargo:rustc-link-lib=framework=QtQml");
+        println!("cargo:rustc-link-lib=framework=QtQuick");
+    }
 }
