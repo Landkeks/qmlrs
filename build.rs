@@ -3,6 +3,7 @@ extern crate pkg_config;
 use std::process::Command;
 use std::process::Stdio;
 use std::fs;
+use std::path::Path;
 use std::env;
 use std::path::PathBuf;
 
